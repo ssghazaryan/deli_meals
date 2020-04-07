@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'DeliMeals',
       theme: ThemeData(
         primarySwatch: Colors.pink,
@@ -35,10 +36,10 @@ class MyApp extends StatelessWidget {
         CategoryMealsScreen.routName : (ctx) => CategoryMealsScreen(), 
         MealDetailScreen.routName : (ctx) => MealDetailScreen(), 
       },
-      onGenerateRoute: (settings){
-        print(settings.arguments);
-       // return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
-      },
+      // onGenerateRoute: (settings){
+      //   print(settings.arguments);
+      //  // return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      // },
       onUnknownRoute: (settings) {
         print(settings.arguments);
         return MaterialPageRoute(builder: (ctx) => CategoriesScreen());

@@ -1,4 +1,4 @@
-# DeliMeaks
+# DeliMeals
 
 A new Flutter project.
 
