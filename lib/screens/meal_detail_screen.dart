@@ -16,8 +16,8 @@ class MealDetailScreen extends StatelessWidget {
 
   Widget buildContainer(Widget child) {
     return Container(
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+        margin: EdgeInsets.all(10),
+        padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(color: Colors.grey),
@@ -93,6 +93,14 @@ class MealDetailScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.delete,
+        ),
+        onPressed: () {
+          Navigator.pop(context, meal.id);
+        },
       ),
     );
   }

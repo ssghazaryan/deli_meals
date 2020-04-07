@@ -5,12 +5,20 @@ import 'package:flutter/material.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
+  final Function removeItem;
 
   void selectMeal(BuildContext context) {
-    Navigator.pushNamed(context, MealDetailScreen.routName, arguments: meal);
+    Navigator.pushNamed(
+      context,
+      MealDetailScreen.routName,
+      arguments: meal,
+    ).then((result) {
+      if(result!=null)
+      removeItem(result);
+    });
   }
 
-  MealItem(this.meal);
+  MealItem(this.meal,{this.removeItem});
 
   String get complexityText {
     switch (meal.complexity) {
@@ -113,7 +121,7 @@ class MealItem extends StatelessWidget {
                       Text('$complexityText'),
                     ],
                   ),
-                 Row(
+                  Row(
                     children: [
                       Icon(Icons.attach_money),
                       SizedBox(
